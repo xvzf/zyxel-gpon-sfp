@@ -47,6 +47,8 @@ I intended to run the fiber directly into my Linux router (using one of the SFP+
 Looking at the business offerings building upon the same technology revealed SFPs distributed only business customers using the [_Digitalisierungsbox Premium 2_](https://www.telekom.de/hilfe/geraete-zubehoer/router/digitalisierungsbox/premium-2#e_745060). 
 The mentioned SFP is made by Zyxel with the identifier `PMG3000-D20B` and sold as [_Digitalisierungsbox Glasfaser Modem_](https://geschaeftskunden.telekom.de/internet-dsl/produkt/digitalisierungsbox-glasfasermodem-kaufen) (Telekom only sells it to business customers but it is available online for ~40 Euros).
 
+The module is based on a Lantiq 98035 SoC, [datasheet](https://www.electronicsdatasheets.com/download/51c42036e34e246e4900009c.pdf?format=pdf), [link to OpenWRT forums discussion on Huawei SFP module based on the same SoC](https://forum.openwrt.org/t/support-ma5671a-sfp-gpon/48042).
+
 ## Accessing the module
 
 After _reverse engineering_ (this time it has been a `fzf` through all files, not analysing the binaries) the firmware of _Telekom Digitalisierungsbox 2_, I've identified the IP address of the module being `10.10.1.1/24` based on a SQL statement with a comment:
