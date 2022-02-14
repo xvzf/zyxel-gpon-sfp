@@ -1,0 +1,90 @@
+
+Scan Time:     2022-02-14 09:07:48
+Target File:   /Users/xvzf/gh/xvzf/zyxel-gpon-sfp/flashdumps/mtd0
+MD5 Checksum:  073455446a6d5f611cb083897f596c2a
+Signatures:    411
+
+DECIMAL       HEXADECIMAL     DESCRIPTION
+--------------------------------------------------------------------------------
+173708        0x2A68C         CRC32 polynomial table, little endian
+
+
+Scan Time:     2022-02-14 09:07:48
+Target File:   /Users/xvzf/gh/xvzf/zyxel-gpon-sfp/flashdumps/mtd1
+MD5 Checksum:  9e8a8ec86a89b832696fc75b5202f317
+Signatures:    411
+
+DECIMAL       HEXADECIMAL     DESCRIPTION
+--------------------------------------------------------------------------------
+
+
+Scan Time:     2022-02-14 09:07:48
+Target File:   /Users/xvzf/gh/xvzf/zyxel-gpon-sfp/flashdumps/mtd2
+MD5 Checksum:  1ccc7807624108778f53ea5599acbafa
+Signatures:    411
+
+DECIMAL       HEXADECIMAL     DESCRIPTION
+--------------------------------------------------------------------------------
+512           0x200           uImage header, header size: 64 bytes, header CRC: 0x4839EC66, created: 2017-07-12 04:01:47, image size: 1184511 bytes, Data Address: 0x80002000, Entry Point: 0x80002000, data CRC: 0xD4AF7C71, OS: Linux, CPU: MIPS, image type: OS Kernel Image, compression type: lzma, image name: "OpenWrtLinux-3.10.12-svn"
+576           0x240           LZMA compressed data, properties: 0x5D, dictionary size: 8388608 bytes, uncompressed size: 3481980 bytes
+1310720       0x140000        Squashfs filesystem, little endian, version 4.0, compression:xz, size: 2289342 bytes, 727 inodes, blocksize: 262144 bytes, created: 2021-05-08 03:28:38
+
+
+Scan Time:     2022-02-14 09:07:48
+Target File:   /Users/xvzf/gh/xvzf/zyxel-gpon-sfp/flashdumps/mtd3
+MD5 Checksum:  1ccc7807624108778f53ea5599acbafa
+Signatures:    411
+
+DECIMAL       HEXADECIMAL     DESCRIPTION
+--------------------------------------------------------------------------------
+512           0x200           uImage header, header size: 64 bytes, header CRC: 0x4839EC66, created: 2017-07-12 04:01:47, image size: 1184511 bytes, Data Address: 0x80002000, Entry Point: 0x80002000, data CRC: 0xD4AF7C71, OS: Linux, CPU: MIPS, image type: OS Kernel Image, compression type: lzma, image name: "OpenWrtLinux-3.10.12-svn"
+576           0x240           LZMA compressed data, properties: 0x5D, dictionary size: 8388608 bytes, uncompressed size: 3481980 bytes
+1310720       0x140000        Squashfs filesystem, little endian, version 4.0, compression:xz, size: 2289342 bytes, 727 inodes, blocksize: 262144 bytes, created: 2021-05-08 03:28:38
+
+
+Scan Time:     2022-02-14 09:07:49
+Target File:   /Users/xvzf/gh/xvzf/zyxel-gpon-sfp/flashdumps/mtd4
+MD5 Checksum:  7a870b94b05dc6d2a37212fc0c8fa6e8
+Signatures:    411
+
+DECIMAL       HEXADECIMAL     DESCRIPTION
+--------------------------------------------------------------------------------
+0             0x0             JFFS2 filesystem, big endian
+
+
+Scan Time:     2022-02-14 09:07:49
+Target File:   /Users/xvzf/gh/xvzf/zyxel-gpon-sfp/flashdumps/mtd5
+MD5 Checksum:  40f25c5f48fbf1df0286e3a80bc05911
+Signatures:    411
+
+DECIMAL       HEXADECIMAL     DESCRIPTION
+--------------------------------------------------------------------------------
+
+
+Scan Time:     2022-02-14 09:07:49
+Target File:   /Users/xvzf/gh/xvzf/zyxel-gpon-sfp/flashdumps/mtd6
+MD5 Checksum:  08c5b23a7cf0a1d97dcdca96ceb62c5b
+Signatures:    411
+
+DECIMAL       HEXADECIMAL     DESCRIPTION
+--------------------------------------------------------------------------------
+0             0x0             Squashfs filesystem, little endian, version 4.0, compression:xz, size: 2289342 bytes, 727 inodes, blocksize: 262144 bytes, created: 2021-05-08 03:28:38
+
+
+Scan Time:     2022-02-14 09:07:49
+Target File:   /Users/xvzf/gh/xvzf/zyxel-gpon-sfp/flashdumps/mtd7
+MD5 Checksum:  41d2e2c0c0edfccf76fa1c3e38bc1cf2
+Signatures:    411
+
+DECIMAL       HEXADECIMAL     DESCRIPTION
+--------------------------------------------------------------------------------
+
+
+Scan Time:     2022-02-14 09:07:49
+Target File:   /Users/xvzf/gh/xvzf/zyxel-gpon-sfp/flashdumps/sha256.sum
+MD5 Checksum:  934ac986d9125173b5478f23e37f84dc
+Signatures:    411
+
+DECIMAL       HEXADECIMAL     DESCRIPTION
+--------------------------------------------------------------------------------
+
