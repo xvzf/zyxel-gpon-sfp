@@ -4,6 +4,7 @@
 ## TLDR
 
 Checkout the three options for configuring your SFP.
+When requiring a serial number change, this can be performed by the CLI only.
 
 ### 1. WEB UI
 1. Configure the ethernet interface the SFP is in with the IP `10.10.1.2/24`.
@@ -19,6 +20,7 @@ Checkout the three options for configuring your SFP.
 4. Change the _PLOAM/SLID/Installationskennung_ by entering following commands followed by a newline:
     - `hal`
     - `password <PLOAM/SLID>`
+5. _Optional_: CHange the serial number using `sn ...`; the first four characters are ASCII encoded, e.g. `SCOM`, the rest is followed in hex.
 
 ### 3. CLI (remote)
 > Note: requires Python >= 3.8
@@ -195,7 +197,7 @@ Hal# password
   <string> Formate:XXXXXXXXXXXXXXXXXXXX
 ```
 The password seems to consist of 10 bytes, entered hex encoded. This is likely the PLOAM password / SLID / _Installationskennung_ / whatever you'd like to call it. 
-The `sn` seems to change the serial number of the ONU (ONT) itself, I did not test that so far.
+The `sn` seems to change the serial number of the ONU (ONT) itself. This works, though it expects the first 4 characters to be ASCII encoded (e.g. for the Telekom Glasfasermodem 2, it likely starts with SCOM (hex:`5343 4f4d`)
 
 I assumed the CLI is using the configuration interface of OpenWRT under the hood; turns out I was right:
 ```
