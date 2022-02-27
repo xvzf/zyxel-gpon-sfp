@@ -1,6 +1,10 @@
 # "Hacking" the (Telekom) Zyxel GPON SFP module (PMG3000-D20B)
 > The SFP can be sourced very easily and is widely available in Germany.
 
+## I just want fiber internet on my non-Telekom router
+
+[jaseg](https://github.com/jaseg/) has written a guide on this [on his blog](https://blog.jaseg.de/posts/telekom-gpon-sfp/).
+
 ## TLDR
 
 Checkout the three options for configuring your SFP.
