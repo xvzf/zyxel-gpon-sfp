@@ -8,7 +8,7 @@
 ## TLDR
 
 Checkout the three options for configuring your SFP.
-When requiring a serial number change, this can be performed by the CLI only.
+When requiring a serial number change, this can be performed by the CLI only. Note, that some SFP NICs don't support hardwireing the speed settings. In this case, you need to connect the GPON fibre link to the module to be able to access it (see https://github.com/xvzf/zyxel-gpon-sfp/issues/8).
 
 ### 1. WEB UI
 1. Configure the ethernet interface the SFP is in with the IP `10.10.1.2/24`.
