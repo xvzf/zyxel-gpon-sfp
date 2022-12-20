@@ -258,6 +258,13 @@ admin@SFP:~# onu ploamsg
 errorcode=0 curr_state=1 previous_state=0 elapsed_msec=16907701
 ```
 
+## Enable 2.5G
+2.5G may not be enabled by default on the SFP. Use the following command to enable 2.5 manually:
+```
+ZYXEL# hal
+Hal# set speed 2.5g mode full
+```
+
 ## HTTP API
 
 Only after getting SSH access I discovered the SFP comes with a WebUI and a _sort of_ API. The CLI `zyxel_gpon_sfp.py` makes use of this API to remotely configure the PLOAM password and possibly SN (again, didn't check it).
