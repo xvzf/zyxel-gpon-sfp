@@ -3,7 +3,7 @@
 
 ## I just want fiber internet on my non-Telekom router
 
-[jaseg](https://github.com/jaseg/) has written a guide on this [on his blog](https://blog.jaseg.de/posts/telekom-gpon-sfp/).
+[jaseg](https://github.com/jaseg/) has written a guide on this [on his blog](https://jaseg.de/blog/telekom-gpon-sfp/).
 
 ## TLDR
 
