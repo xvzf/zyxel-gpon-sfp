@@ -12,7 +12,7 @@ When requiring a serial number change, this can be performed by the CLI only. No
 
 ### 1. WEB UI
 1. Configure the ethernet interface the SFP is in with the IP `10.10.1.2/24`.
-2. Port-forward the SFPs web interface to your local machine via SSH: `ssh -L 127.0.0.1:8080:10.10.1.1:80 <user@router>`.
+2. Port-forward the SFPs web interface to your local machine via SSH: `ssh -L 127.0.0.1:8080:10.10.1.1:80 <user@router>` (maybe you need to add option '-oHostKeyAlgorithms=+ssh-dss' before '-L'to connect).
 3. Access the web-interface on `http://localhost:8080`, username `admin`, password `1234`.
 
 ### 2. CLI (on the SFP)
@@ -24,7 +24,7 @@ When requiring a serial number change, this can be performed by the CLI only. No
 4. Change the _PLOAM/SLID/Installationskennung_ by entering following commands followed by a newline:
     - `hal`
     - `password <PLOAM/SLID>`
-5. _Optional_: CHange the serial number using `sn ...`; the first four characters are ASCII encoded, e.g. `SCOM`, the rest is followed in hex.
+5. _Optional_: Change the serial number using `set sn ...`; the first four characters are ASCII encoded, e.g. `SCOM`, the rest is followed in hex. Within sw version 'V1.00(ABVJ.0)b3v' you need to use the whole SN as ASCII encoded string (cmd like 'set sn 534312345678').
 
 ### 3. CLI (remote)
 > Note: requires Python >= 3.8
@@ -244,6 +244,7 @@ gpon.gpe.nPeNumber=6
 The `onu` command helps debugging the system:
 - `onu gtcpg`: Retrieve password
 - `onu gtcsng`: Retrieve serial number
+- `onu gtcsns`: Set serial number
 
 ### Connection state
 **Connected** (`curr_state=5`)
