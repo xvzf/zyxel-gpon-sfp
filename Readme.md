@@ -20,7 +20,7 @@ When requiring a serial number change, this can be performed by the CLI only. No
 
 1. Configure the ethernet interface the SFP is in with the IP `10.10.1.2/24`.
 2. SSH into the module using `admin@10.10.1.1`, password `admin`.
-3. Login into the CLI with user `admin`, paddword `1234`.
+3. Login into the CLI with user `admin`, password `1234`.
 4. Change the _PLOAM/SLID/Installationskennung_ by entering following commands followed by a newline:
     - `hal`
     - `password <PLOAM/SLID>`
@@ -238,7 +238,7 @@ gpon.gpe=gpon
 gpon.gpe.nPeNumber=6
 ```
 
-## Observing the GPON SN and Password in real time.
+## Observing the GPON SN and Password in real time
 
 ### Serial and Password
 The `onu` command helps debugging the system:
