@@ -284,9 +284,8 @@ Sometimes the default login `admin/1234` for Zyxel PMG3000-D20B does not work - 
 6. Display device default password: `cat /var/config/.user_cfg`
 
 If this is not successful:
-{:start="7"}
-7. Write the actual config with `http://10.10.1.1/cgi/set_save?rand=0.4798344808717123` - the device responds "1"
-8. Display device default password: `grep -ie "admin Password" /var/config/mib.conf`
+1. Write the actual config with `http://10.10.1.1/cgi/set_save?rand=0.4798344808717123` - the device responds "1"
+2. Display device default password: `grep -ie "admin Password" /var/config/mib.conf`
 
 ### If you would like to change this permanently (survives a factory reset):
 
