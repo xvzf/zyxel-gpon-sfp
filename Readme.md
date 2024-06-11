@@ -284,6 +284,7 @@ Sometimes the default login `admin/1234` for Zyxel PMG3000-D20B does not work - 
 6. Display device default password: `cat /var/config/.user_cfg`
 
 If this is not successful:
+{:start="7"}
 7. Write the actual config with `http://10.10.1.1/cgi/set_save?rand=0.4798344808717123` - the device responds "1"
 8. Display device default password: `grep -ie "admin Password" /var/config/mib.conf`
 
@@ -306,14 +307,17 @@ For creating the needed fw_env.config there is already a script which is called 
 2. Show the uboot-env variables: `fw_printenv`
    look for `remote_account_pwd`
    
-It is important that fw_printenv does not complain about checksum errors. If it complains, do not continue!
+It is important that fw_printenv does not complain about checksum errors. 
+**If it complains, do not continue!**
 
 Be careful changing values in the uboot-env! Laser calibration data is also stored here, they are individual for every module!
 It´s a good idea to store the output of `fw_printenv` - alternatively make a backup of your mtd1 partition!
 
 1. Set the new password: `fw_setenv remote_account_pwd 1234`
 2. Restore factory-defaults: `http://10.10.1.1/cgi/set_default?rand=0.8890542929500389` - the device responds "1"
-   and reboot: `http://10.10.1.1/cgi/reset_onu?rand=0.14418772918225453` - the device responds "1"
+3. Reboot: `http://10.10.1.1/cgi/reset_onu?rand=0.14418772918225453` - the device responds "1"
+
+Be happy :-)
 
 ## HTTP API
 
