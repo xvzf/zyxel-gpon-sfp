@@ -268,6 +268,53 @@ Hal# set speed 2.5g mode full
 
 You may have to disable auto-negotation and set a fixed port speed of 2.5G on your network adapter to make it work.
 
+## How to handle with unknown passwords for Zyxel PMG3000-D20B
+
+**Disclaimer: Use this on your own risk. I am not responsible for any damages!**
+
+Sometimes the default login `admin/1234` for Zyxel PMG3000-D20B does not work - this describes how to get the password and how to change it.
+
+### Get the system default password:
+
+1. Open the webinterface (`http://10.10.1.1` if the modules default ip has not been changed)
+2. Login with `guest/guest`
+3. Set the admin password to `admin/1234`: `http://10.10.1.1/cgi/set_admin?rand=0.7041383755617387&type=2&username=admin&password=31rmzl323334m&level=0` - the device responds "1"
+4. Open SSH, Login with `admin/admin` and for the Zyxel CLI Mode with `admin/1234`
+5. Call `linuxshell`
+6. Display device default password: `cat /var/config/.user_cfg`
+
+If this is not successful:
+7. Write the actual config with `http://10.10.1.1/cgi/set_save?rand=0.4798344808717123` - the device responds "1"
+8. Display device default password: `grep -ie "admin Password" /var/config/mib.conf`
+
+### If you would like to change this permanently (survives a factory reset):
+
+The device default password is stored in the uboot-env partition (mtd1). The firmware contains the needed binaries but unfortunately not the needed layout-config (/etc/fw_env.config). 
+Furthermore the /etc directory is not writeable because it is a squashfs filesystem.
+
+1. Login into the device, start `linuxshell`
+2. `cd /tmp`
+3. `mkdir /tmp/mount_bind`
+4. copy the hole /etc into /tmp/mount_bind: `cp -r /etc/ /tmp/mount_bind/`
+5. mount the copy for /etc: `mount -o bind /tmp/mount_bind/etc/ /etc/`
+
+Now the /etc is (up to the next reboot) writeable, because it´s redirected to /tmp/mount_bind/etc.
+
+For creating the needed fw_env.config there is already a script which is called at boot time (and normally fails because of the read-only access).
+
+1. `/etc/init.d/fw_env.sh boot`
+2. Show the uboot-env variables: `fw_printenv`
+   look for `remote_account_pwd`
+   
+It is important that fw_printenv does not complain about checksum errors. If it complains, do not continue!
+
+Be careful changing values in the uboot-env! Laser calibration data is also stored here, they are individual for every module!
+It´s a good idea to store the output of `fw_printenv` - alternatively make a backup of your mtd1 partition!
+
+1. Set the new password: `fw_setenv remote_account_pwd 1234`
+2. Restore factory-defaults: `http://10.10.1.1/cgi/set_default?rand=0.8890542929500389` - the device responds "1"
+   and reboot: `http://10.10.1.1/cgi/reset_onu?rand=0.14418772918225453` - the device responds "1"
+
 ## HTTP API
 
 Only after getting SSH access I discovered the SFP comes with a WebUI and a _sort of_ API. The CLI `zyxel_gpon_sfp.py` makes use of this API to remotely configure the PLOAM password and possibly SN (again, didn't check it).
